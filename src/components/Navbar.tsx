@@ -1,13 +1,9 @@
 
-import { useEffect } from "react"
-import { es } from "../i18n/spanish"
-import { getRestaurants } from "../services/services"
 
-export const Navbar = () => {
-    useEffect(() => {
-      getRestaurants()
-    }, [])
-    
+import { es } from "../i18n/spanish"
+
+
+export const Navbar = () => {  
   return (
     <nav className="navbar bg-body-tertiary">
                     <div className="container-fluid">

@@ -1,5 +1,4 @@
-import { ResponseRestaurants } from "../models/navar.interface"
-
+import { ResponseRestaurants } from "../interfaces/navar.interface"
 
 const BaseUrl = 'https://www.zaragoza.es/sede/servicio/restaurante.json?'
 
