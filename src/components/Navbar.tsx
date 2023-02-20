@@ -2,7 +2,6 @@
 
 import { es } from "../i18n/spanish"
 
-
 export const Navbar = () => {  
   return (
     <nav className="navbar bg-body-tertiary">
