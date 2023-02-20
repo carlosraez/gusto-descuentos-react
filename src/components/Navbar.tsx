@@ -1,6 +1,13 @@
+
+import { useEffect } from "react"
 import { es } from "../i18n/spanish"
+import { getRestaurants } from "../services/services"
 
 export const Navbar = () => {
+    useEffect(() => {
+      getRestaurants()
+    }, [])
+    
   return (
     <nav className="navbar bg-body-tertiary">
                     <div className="container-fluid">
@@ -8,7 +15,7 @@ export const Navbar = () => {
                             <input
                                 className="form-control me-2"
                                 type="search"
-                                placeholder="hola"
+                                placeholder={es.placeHolderSearchRestaurant}
                                 aria-label="Search"
                             />
                             <button
@@ -22,3 +29,5 @@ export const Navbar = () => {
                 </nav>
   )
 }
+
+
