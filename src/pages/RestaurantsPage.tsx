@@ -18,7 +18,7 @@ export const RestaurantsPage = () => {
       <div className="row">
         {
           restaurants.map((rest) => 
-          <div className="col-6 mt-3">
+          <div className="col-4 mt-3">
           <Restaurant 
           title={rest.title} 
           comment={rest.comment}
