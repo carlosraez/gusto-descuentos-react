@@ -34,4 +34,8 @@ export interface ResponseRestaurants {
     start: number,
     rows: number,
     result: restuarant[]
-  }
+}
+
+export interface restaurantsContextProps {
+    state: ResponseRestaurants;
+}

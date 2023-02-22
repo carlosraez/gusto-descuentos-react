@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { es } from '../i18n/spanish';
-import { useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');
