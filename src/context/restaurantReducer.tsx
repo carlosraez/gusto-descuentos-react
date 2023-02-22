@@ -1,27 +1,26 @@
-import { ResponseRestaurants } from "../interfaces/navar.interface";
+import {
+    ResponseRestaurants,
+    RestaurantsState,
+} from '../interfaces/navar.interface';
 
-type RestaurantAction = 
-|
-{
-     type: 'initialData',
-     payload: ResponseRestaurants 
-} 
+type RestaurantAction = {
+    type: 'searchRestaurant';
+    payload: {
+        q: string
+    }
+};
 
-    
-   
-
-
-export const restaurantReducer = (state:ResponseRestaurants , action:RestaurantAction) => {
+export const restaurantReducer = (
+    state: RestaurantsState,
+    action: RestaurantAction
+) => {
     switch (action.type) {
-        case 'initialData':
-        return {
-            ...state,  
-        }
-            
-                      
-    
+        case 'searchRestaurant':
+            return {
+                ...state,
+            };
+
         default:
             return state;
     }
-   
-}
+};

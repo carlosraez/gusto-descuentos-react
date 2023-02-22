@@ -6,7 +6,7 @@ const BaseUrl = 'https://www.zaragoza.es/sede/servicio/restaurante.json?'
  * @describe Get all restaurants from the API
  * @returns {object | string} user object
  */
-export const getRestaurants = async ():Promise<ResponseRestaurants | string> => {
+export const getRestaurants = async ():Promise<ResponseRestaurants | undefined> => {
   try {
     const resp = await  fetch(`${BaseUrl}`,{
       method: 'GET',
@@ -18,8 +18,6 @@ export const getRestaurants = async ():Promise<ResponseRestaurants | string> => 
    return data 
   } catch (error) {
     console.log(error);
-    return 'error'
-   
   }
   
 }

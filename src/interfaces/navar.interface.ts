@@ -36,7 +36,15 @@ export interface ResponseRestaurants {
     result: restuarant[]
 }
 
+export interface RestaurantsState  {
+    q: string,
+    totalCount: number,
+    start: number,
+    rows: number,
+    result: restuarant[]
+}
+
 export interface restaurantsContextProps {
     state: ResponseRestaurants;
-    getInitialData: () => void
+    searchRestaurant: (q:string) => void
 }

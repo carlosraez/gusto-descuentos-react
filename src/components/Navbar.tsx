@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { es } from '../i18n/spanish';
+
+import { Context } from '../context/useContext';
 
 export const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const { searchRestaurant } = useContext(Context)
     
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
     };
 
     useEffect(() => {
-         
-    }, [searchTerm]);
+         searchRestaurant(searchTerm)
+    }, [searchRestaurant, searchTerm]);
 
     return (
         <nav className="navbar bg-body-tertiary">
