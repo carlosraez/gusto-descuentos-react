@@ -1,15 +1,22 @@
 import { ResponseRestaurants } from "../interfaces/navar.interface";
 
-type RestaurantAction = {
-    
-}
+type RestaurantAction = 
+|
+{
+     type: 'initialData',
+     payload: ResponseRestaurants 
+} 
+
     
    
 
 
 export const restaurantReducer = (state:ResponseRestaurants , action:RestaurantAction) => {
-    switch (action) {
-        
+    switch (action.type) {
+        case 'initialData':
+        return {
+            ...state,  
+        }
             
                       
     

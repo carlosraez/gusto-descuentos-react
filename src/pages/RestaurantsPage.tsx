@@ -2,10 +2,20 @@ import React, { useState } from 'react'
 import { Restaurant } from '../components/Restaurant'
 import { useEffect } from 'react';
 import { getRestaurants } from '../services/services';
-import { restuarant } from '../interfaces/navar.interface';
+import { ResponseRestaurants, restuarant } from '../interfaces/navar.interface';
+import { Context } from '../context/useContext';
 
 export const RestaurantsPage = () => {
   const [restaurants, setRestaurants] = useState<restuarant[]>([])
+  
+  const { getInitialData } = React.useContext(Context);
+
+  useEffect(() => {
+    getRestaurants()
+    .then((resp:ResponseRestaurants) => 
+      setRestaurants(resp.result)
+    )
+  }, [])
   
 
   return (

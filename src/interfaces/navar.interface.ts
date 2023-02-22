@@ -38,4 +38,5 @@ export interface ResponseRestaurants {
 
 export interface restaurantsContextProps {
     state: ResponseRestaurants;
+    getInitialData: () => void
 }

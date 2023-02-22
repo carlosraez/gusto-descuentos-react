@@ -11,11 +11,20 @@ export const InitialState:ResponseRestaurants = {
 
 export const Context = createContext({} as restaurantsContextProps)
 
-export const Provider = ({children}:any) => {
+export const RestaurantProvider = ({children}:any) => {
+
+  const getInitialData = () => {
+    dispatch({type: 'initialData',  payload: {
+      totalCount: 0, 
+      start: 0,
+      rows: 0,
+      result: []
+    }})
+}
 
 const [state, dispatch] = useReducer(restaurantReducer, InitialState)
 return (
-  <Context.Provider value={{state}}>
+  <Context.Provider value={{state, getInitialData}}>
       {children}
   </Context.Provider>
 )
