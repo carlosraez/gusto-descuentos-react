@@ -8,12 +8,9 @@ export const Navbar = () => {
     const { searchRestaurant } = useContext(Context)
     
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(event.target.value);
+        searchRestaurant(event.target.value)
+        setSearchTerm(event.target.value)
     };
-
-    useEffect(() => {
-         searchRestaurant(searchTerm)
-    }, [searchRestaurant, searchTerm]);
 
     return (
         <nav className="navbar bg-body-tertiary">

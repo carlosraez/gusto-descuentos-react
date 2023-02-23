@@ -14,7 +14,9 @@ export const restaurantReducer = (
     state: RestaurantsState,
     action: RestaurantAction
 ) => {
-    switch (action.type) {
+    console.log(action);
+    
+    switch (action.type) {     
         case 'searchRestaurant':
             return {
                 ...state,

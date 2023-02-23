@@ -9,7 +9,6 @@ import { restuarant } from '../interfaces/navar.interface';
 export const RestaurantsPage = () => {
     const [restaurants, setRestaurants] = useState<restuarant[]>([]);
 
-
     useEffect(() => {
         getRestaurants().then((resp) => {
             if (resp !== undefined) {

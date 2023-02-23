@@ -1,4 +1,4 @@
-import { ResponseRestaurants, restuarant } from '../interfaces/navar.interface';
+import { ResponseRestaurants } from '../interfaces/navar.interface';
 
 const BaseUrl = 'https://www.zaragoza.es/sede/servicio/restaurante.json?'
 
@@ -8,7 +8,7 @@ const BaseUrl = 'https://www.zaragoza.es/sede/servicio/restaurante.json?'
  */
 export const getRestaurants = async ():Promise<ResponseRestaurants | undefined> => {
   try {
-    const resp = await  fetch(`${BaseUrl}`,{
+    const resp = await fetch(`${BaseUrl}`,{
       method: 'GET',
       headers:{
         'Content-Type': 'application/json',
@@ -19,7 +19,6 @@ export const getRestaurants = async ():Promise<ResponseRestaurants | undefined> 
   } catch (error) {
     console.log(error);
   }
-  
 }
 
 
