@@ -9,11 +9,7 @@ export const RestaurantsPage = () => {
     const [restaurants, setRestaurants] = useState<restuarant[]>([]);
 
     useEffect(() => {
-        getRestaurants().then((resp) => {
-            if (resp !== undefined) {
-                setRestaurants(resp.result);
-            }
-        });
+        getRestaurants().then((resp) => setRestaurants(resp.result));
     }, []);
 
     return (
