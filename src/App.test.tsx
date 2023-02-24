@@ -2,8 +2,16 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App component', () => {
+  it('is truthy', () => {
+    expect(<App />).toBeTruthy();
+  });
+
+  it('renders the restaurant provider component', () => {
+    render(<App />);
+    const providerElement = screen.getByTestId('restaurant-provider');
+    expect(providerElement).toBeInTheDocument();
+  });
+
+  
 });

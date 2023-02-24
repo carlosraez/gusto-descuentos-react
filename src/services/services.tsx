@@ -8,6 +8,7 @@ const BaseUrl = 'https://www.zaragoza.es/sede/servicio/restaurante.json?'
  */
 export const getRestaurants = async ():Promise<ResponseRestaurants | undefined> => {
   try {
+    console.log('Before fetch');
     const resp = await fetch(`${BaseUrl}`,{
       method: 'GET',
       headers:{
@@ -17,7 +18,7 @@ export const getRestaurants = async ():Promise<ResponseRestaurants | undefined> 
    const data = await resp.json()
    return data 
   } catch (error) {
-    console.log(error);
+    throw new Error("API call failed");
   }
 }
 

@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { getRestaurants } from '../services/services';
 import { restuarant } from '../interfaces/navar.interface';
 
-
 export const RestaurantsPage = () => {
     const [restaurants, setRestaurants] = useState<restuarant[]>([]);
 
